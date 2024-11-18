@@ -8,7 +8,7 @@ given_str = ""
 
 
 length = int(input(f"How long do you want password to be?..."
-                   f"[.minsize of {minsize}.]...[maxsize of -->{abs(maxsize - minsize)}<-- symbols.] "))
+                   f"[.minsize of {minsize}.]...[maxsize of -->{abs(maxsize - minsize)}<-- consecutive symbols.] "))
 
 while length is None or length < minsize:
     given_str = ""
