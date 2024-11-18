@@ -9,8 +9,9 @@ length = int(length)
 
 str_with_result = ""
 
-result = random.sample((random.choice(ascii(string.ascii_lowercase) + (random.choice(ascii(string.digits))) +
-                                      (random.choice(string.ascii_uppercase)) + (random.choice(ascii(string.punctuation))))),length)
+result = random.sample((((random.choice(ascii(string.ascii_lowercase) + (random.choice(ascii(string.digits))) +
+                                      (random.choice(string.ascii_uppercase)) +
+                                      (random.choice(ascii(string.punctuation)))))for x in (range(len(str_with_result)), length)),),1)
 
 # print(result)
 
