@@ -35,7 +35,8 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
 
     print(f"Your desired length of password is -->{len(given_str)}<-- symbols "
           f"of maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
-    print(f"Your Password is from here -->{textwrap.fill(given_str, width=135)}<-- to here exactly between the arrows.\n")
+
+    print(f"Your Password is from here -->{textwrap.fill(given_str, width=162)}<-- to here exactly between the arrows.\n")
 
 
     action = input(f"Do you want to use again with new sample 'Y'es / 'N'o / 'E'xport to a "
@@ -53,7 +54,6 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
         open('password_gen.txt', 'w').writelines(pyperclip.paste())
 
         print("Exported to 'password_gen.txt' by system settings")
-
         break
 
     elif action.lower() == "y":
