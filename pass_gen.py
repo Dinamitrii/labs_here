@@ -11,7 +11,7 @@ action = ""
 
 length = input(f"How long do you want password to be?..."
                f"[minsize of {minsize} symbols]..."
-               f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming generation.]")
+               f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming generation.]\n")
 
 while length is None or length == "" or int(length) < minsize:
     given_str = ""
@@ -19,8 +19,8 @@ while length is None or length == "" or int(length) < minsize:
     print("Try again...pls...")
 
     length = input(f"How long do you want password to be?..."
-                   f"[minsize of {minsize} symbols.]..."
-                   f"[maxsize of -->{maxsize}<-- consecutive symbols more time consuming generation.]")
+                   f"[minsize of {minsize} symbols]..."
+                   f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming generation.]\n")
 
 while minsize <= int(length) <= maxsize:
 
@@ -34,15 +34,16 @@ while minsize <= int(length) <= maxsize:
 
         given_str += ("".join(map(str, random.sample(upper + lowerr + nums + symbols, 1)[-1])))
 
-    print(f"Your desired length of password is -->{len(given_str)}<-- symbols."
+    print(f"Your desired length of password is -->{len(given_str)}<-- symbols "
           f"of maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
     print(f"Your Password is from here -->{textwrap.fill(given_str, width=111)}<-- to here between the arrows.\n")
     print(f"Maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
 
-    print(f"Do you want to use again with new sample 'Y'es or 'N'o or 'E'xport to a "
-          f"'password.txt' file for convenience...Enter your choice...: ")
 
-    action = input().lower().strip()
+    action = input(f"Do you want to use again with new sample 'Y'es / 'N'o / 'E'xport to a "
+          f"'password.txt' file for convenience...Enter your choice...: ").lower().strip()
+
+
 
     if action == "e":
         pyperclip.copy(given_str)
@@ -63,7 +64,7 @@ while minsize <= int(length) <= maxsize:
 
         length = input(f"How long do you want password to be?..."
                        f"[minsize of {minsize} symbols.]..."
-                       f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming.]")
+                       f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming generation.]")
 
         length = int(length)
     else:
