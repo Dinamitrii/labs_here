@@ -22,8 +22,7 @@ while length is None or length == "" or int(length) < minsize:
                    f"[minsize of {minsize} symbols]..."
                    f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming generation.]\n")
 
-while minsize <= int(length) <= maxsize:
-
+while minsize <= int(length) <= maxsize or action.lower() == "y":
     given_str = ""
 
     for char in range(int(length)):
@@ -36,33 +35,34 @@ while minsize <= int(length) <= maxsize:
 
     print(f"Your desired length of password is -->{len(given_str)}<-- symbols "
           f"of maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
-    print(f"Your Password is from here -->{textwrap.fill(given_str, width=135)}<-- to here between the arrows.\n")
-    print(f"Maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
+    print(f"Your Password is from here -->{textwrap.fill(given_str, width=135)}<-- to here exactly between the arrows.\n")
+
 
     action = input(f"Do you want to use again with new sample 'Y'es / 'N'o / 'E'xport to a "
-                   f"'password.txt' file for convenience...Enter your choice...: ").lower().strip()
+                   f"'password_gen.txt' file for convenience...Enter your choice...:\n").lower().strip()
 
-    if action == "e":
+    if action.lower() == "e":
         pyperclip.copy(given_str)
-        open('password.txt', 'w').writelines(pyperclip.paste())
+        open('password_gen.txt', 'w').writelines(pyperclip.paste())
 
-        print("Exported to 'password.txt'")
+        print("Exported to 'password_gen.txt'")
         break
 
-    elif action == "n":
+    elif action.lower() == "n":
         pyperclip.copy(given_str)
-        open('password.txt', 'w').writelines(pyperclip.paste())
+        open('password_gen.txt', 'w').writelines(pyperclip.paste())
 
-        print("Exported to 'password.txt' by system settings")
+        print("Exported to 'password_gen.txt' by system settings")
 
         break
 
-    elif action == "y":
+    elif action.lower() == "y":
 
         length = input(f"How long do you want password to be?..."
                        f"[minsize of {minsize} symbols.]..."
-                       f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming generation.]")
+                       f"[maxsize of -->{maxsize}<-- consecutive symbols but more time consuming generation.]!!!\n")
 
         length = int(length)
+        continue
     else:
-        action = length
+        action = action.lower() == "n"
