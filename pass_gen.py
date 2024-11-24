@@ -36,14 +36,11 @@ while minsize <= int(length) <= maxsize:
 
     print(f"Your desired length of password is -->{len(given_str)}<-- symbols "
           f"of maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
-    print(f"Your Password is from here -->{textwrap.fill(given_str, width=111)}<-- to here between the arrows.\n")
+    print(f"Your Password is from here -->{textwrap.fill(given_str, width=135)}<-- to here between the arrows.\n")
     print(f"Maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
 
-
     action = input(f"Do you want to use again with new sample 'Y'es / 'N'o / 'E'xport to a "
-          f"'password.txt' file for convenience...Enter your choice...: ").lower().strip()
-
-
+                   f"'password.txt' file for convenience...Enter your choice...: ").lower().strip()
 
     if action == "e":
         pyperclip.copy(given_str)
