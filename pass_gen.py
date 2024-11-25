@@ -78,4 +78,4 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
         action = action.lower() == "n"
 
 endtime_zero_point = time.time()
-print(f"Your FUN continued for {(endtime_zero_point - starting_time_zero_point):.3f} seconds.")
+print(f"Your 'FUN' continued for {(endtime_zero_point - starting_time_zero_point):.3f} seconds.")
