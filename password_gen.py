@@ -34,7 +34,7 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
     given_str = ""
 
     for char in range(int(length)):
-        
+
         upper = random.choice(ascii(string.ascii_uppercase))
         lowerr = random.choice(ascii(string.ascii_lowercase))
         nums = random.choice(ascii(string.digits))
@@ -42,7 +42,7 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
 
         given_str += ("".join(map(str, random.sample(upper + lowerr + nums + symbols, 1)[-1])))
     endtime_zero_point = time.time()
-        
+
     print(f"Your desired length of password is -->{len(given_str)}<-- symbols "
           f"of maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
 
@@ -57,7 +57,8 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
         open('password_gen.txt', 'w').writelines(pyperclip.paste())
         print("Exported to 'password_gen.txt'")
 
-        print(f"Until exporting it took exactly {(endtime_zero_point - starting_time_zero_point):.3f} seconds to generate the password.")
+        print(f"Until exporting it took exactly {(endtime_zero_point - starting_time_zero_point):.3f} seconds "
+              f"to generate the password.")
         break
 
     elif action.lower() == "n":
@@ -65,7 +66,8 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
         open('password_gen.txt', 'w').writelines(pyperclip.paste())
         print("Exported to 'password_gen.txt' by system settings")
 
-        print(f"Until exiting it took exactly {(endtime_zero_point - starting_time_zero_point):.3f}seconds to generate the password.")
+        print(f"Until exiting it took exactly {(endtime_zero_point - starting_time_zero_point):.3f} seconds "
+              f"to generate the password.")
         break
 
     elif action.lower() == "y":
