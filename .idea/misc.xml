@@ -4,4 +4,7 @@
     <option name="sdkName" value="Python 3.10 (calculator)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 virtualenv at ~/PycharmProjects/labs_here/.venv" project-jdk-type="Python SDK" />
+  <component name="PythonCompatibilityInspectionAdvertiser">
+    <option name="version" value="3" />
+  </component>
 </project>
