@@ -1,5 +1,6 @@
 import speedtest as sp
 
+
 def main():
     test = sp.Speedtest()
 
