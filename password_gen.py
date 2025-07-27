@@ -1,5 +1,6 @@
 import random
 import string
+from os import linesep
 from sys import maxsize
 import pyperclip
 import textwrap
@@ -54,7 +55,11 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
 
     if action.lower() == "e":
         pyperclip.copy(given_str)
-        open('password_gen.txt', 'w').writelines(pyperclip.paste())
+        hashed_pass = abs(hash(given_str))
+        open('generated_password.txt', 'w').writelines(pyperclip.paste())
+        open('generated_password.txt', 'a').writelines('\n')
+        open('generated_password.txt', 'a').writelines(str(hashed_pass))
+
         print("Exported to 'generated_password.txt'")
 
         print(f"Until exporting it took exactly {(endtime_zero_point - starting_time_zero_point):.3f} seconds "
@@ -63,7 +68,10 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
 
     elif action.lower() == "n":
         pyperclip.copy(given_str)
+        hashed_pass = abs(hash(given_str))
         open('generated_password.txt', 'w').writelines(pyperclip.paste())
+        open('generated_password.txt', 'a').writelines('\n')
+        open('generated_password.txt', 'a').writelines(str(hashed_pass))
         print("Exported to 'generated_password.txt' by system settings")
 
         print(f"Until exiting it took exactly {(endtime_zero_point - starting_time_zero_point):.3f} seconds "
