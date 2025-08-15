@@ -1,6 +1,5 @@
 import random
 import string
-from os import linesep
 from sys import maxsize
 import pyperclip
 import textwrap
