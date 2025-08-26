@@ -3,6 +3,7 @@ branca==0.8.1
 certifi==2025.8.3
 charset-normalizer==3.4.3
 click==8.2.1
+dlib==20.0.0
 folium==0.20.0
 idna==3.10
 itsdangerous==2.2.0
