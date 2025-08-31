@@ -4,7 +4,7 @@ from sys import maxsize
 import pyperclip
 import textwrap
 import time
-
+from argon2 import PasswordHasher
 
 
 minsize = abs(6)
@@ -41,20 +41,25 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
         symbols = random.choice(ascii(string.punctuation))
 
         given_str += ("".join(map(str, random.sample(upper + lowerr + nums + symbols, 1)[-1])))
+
+        hashed_pass = PasswordHasher().hash(given_str)
+
     endtime_zero_point = time.time()
 
-    print(f"Your desired length of password is -->{len(given_str)}<-- symbols "
+
+    print(f"Your desired length of password is -->{len(hashed_pass[2])}<-- symbols "
           f"of maximum possible -->{maxsize}<-- consecutive symbols but more time consuming generation.\n")
 
-    print(f"Your Password is from here -->{textwrap.fill(given_str, width=162)}<-- to here exactly "
+    print(f"Your Password is from here -->{textwrap.fill(hashed_pass, width=162)}<-- to here exactly "
           f"between the arrows.\n")
 
     action = input(f"Do you want to use again with new sample 'Y'es / 'N'o / 'E'xport to a "
                    f"'generated_password.txt' file for convenience...Enter your choice...:\n").lower().strip()
 
     if action.lower() == "e":
-        pyperclip.copy(given_str)
-        hashed_pass = abs(hash(given_str))
+
+        pyperclip.copy(hashed_pass)
+
         open('generated_password.txt', 'w').writelines(pyperclip.paste())
         open('generated_password.txt', 'a').writelines('\n')
         open('generated_password.txt', 'a').writelines(str(hashed_pass))
@@ -66,8 +71,9 @@ while minsize <= int(length) <= maxsize or action.lower() == "y":
         break
 
     elif action.lower() == "n":
-        pyperclip.copy(given_str)
-        hashed_pass = abs(hash(given_str))
+
+        pyperclip.copy(hashed_pass)
+
         open('generated_password.txt', 'w').writelines(pyperclip.paste())
         open('generated_password.txt', 'a').writelines('\n')
         open('generated_password.txt', 'a').writelines(str(hashed_pass))
