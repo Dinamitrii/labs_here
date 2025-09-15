@@ -1,8 +1,11 @@
-# import folium package and create map
 import folium
+import requests
 
 
-def generate_geo_map():
+def generate_geo_map(request):
+
+    
+
     generated_map = folium.Map(location=[42.6975, 23.3242], zoom_start=12)
 
     geo_location = folium.GeoJson()

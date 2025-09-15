@@ -3,13 +3,21 @@ import folium
 
 def show_map():
     political_countries_url = (
-        "http://geojson.xyz/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson"
+        "https://geojson.xyz/naturalearth-3.3.0/ne_50m_admin_0_countries.geojson"
     )
 
-    m = folium.Map(location=(30, 10), zoom_start=3, tiles="cartodb positron")
-    folium.GeoJson(political_countries_url).add_to(m)
+    mpc = folium.Map(location=(30, 10), zoom_start=9, tiles="cartodb positron")
 
-    m.save("footprint.html")
+    folium.GeoJson(political_countries_url).add_to(mpc)
+
+
+    mpc = mpc._repr_html_()
+
+
+
+
+
+    # m.save("footprint.html")
 
 
 
