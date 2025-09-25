@@ -9,7 +9,7 @@ def get_location(ip_address):
 
 
 # loading my ip_address
-myip = '46.204.255.48'
+myip = '46.10.204.55'
 location_info = get_location(myip)
 
 print('country:', location_info.country)
@@ -24,7 +24,7 @@ myloc = folium.Map(location=coordinate, zoom_start=14, popup='My Location')
 folium.Marker(coordinate, icon=folium.Icon(color='blue', icon_color='blue', prefix='fa', icon='male')).add_to(myloc)
 
 # Adding a circle around the location
-folium.Circle(location=coordinate, radius=200).add_to(myloc)
+folium.Circle(location=coordinate, radius=100).add_to(myloc)
 
 # Saving the map as an HTML file
 myloc.save('my_mapsing.html')
