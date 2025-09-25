@@ -1,11 +1,7 @@
 from PIL import Image, ImageDraw
 import random
 
-from matplotlib.lines import drawStyles
-from pandas import wide_to_long
-from scipy.signal.windows import blackman
-from scipy.special import xlog1py, y1_zeros
-
+# hereafter
 wide, high = 400, 400
 img = Image.new("RGB", (wide, high), "black")
 draw = ImageDraw.Draw(img)
