@@ -15,6 +15,7 @@ def sierpinski(lenght, depth):
         sierpinski(lenght/2, depth-1)
         t.left(60); t.backward(lenght/2); t.right(60)
 
+
 sierpinski(350, 4)
 
 turtle.done()
