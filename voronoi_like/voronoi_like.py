@@ -1,5 +1,5 @@
 from PIL import Image
-import random, math
+import random
 
 
 

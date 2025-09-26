@@ -19,3 +19,4 @@ for i in range(1000):
     draw.polygon([(x1, y1), (x2, y2),(x3, y3 )], fill=color)
 
 img.save("triangles.png")
+img.save("triangles.jpg")

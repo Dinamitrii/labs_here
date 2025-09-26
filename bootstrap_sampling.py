@@ -1,6 +1,7 @@
 import numpy as np
 import random
 
+
 x = np.random.normal(loc= 300.0, size=1000)
 print(np.mean(x))
 
