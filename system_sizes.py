@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def convert_size_in_bytes(size_in_bytes: int, size_only: bool = False) -> int | str:
     size_bytes = int(size_in_bytes)
     if size_bytes == 0:
@@ -13,4 +16,4 @@ def convert_size_in_bytes(size_in_bytes: int, size_only: bool = False) -> int | 
         return f"{size_bytes:.2f} {size_names[i]}"
 
 
-print(convert_size_in_bytes(65754))
+print(convert_size_in_bytes(328653211))

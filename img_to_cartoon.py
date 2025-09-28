@@ -6,7 +6,7 @@ image = cv2.imread("/home/dinamitrii/Pictures/mami/mami.jpeg")
 
 # Edges
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-gray = cv2.medianBlur(gray, 11)
+gray = cv2.medianBlur(gray, 3)
 edges = cv2.adaptiveThreshold (gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
                                cv2.THRESH_BINARY, 9, 9)
 

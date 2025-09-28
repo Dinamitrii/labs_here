@@ -1,1 +1,3 @@
-'https://lon.rtsp.me/DjAvotRO05KzedNZjUSbOg/1758886128/hls/4NSnNeAb.m3u8'
+Maps=AIzaSyAtPCVL8OZUFWQ0czlPkRCI-AdFmSlVY1o
+
+f"'<a href="https://www.google.com/maps/embed/v1/view?key={os.getenv("API_KEY")}&center={(address.raw["lat"], address.raw["lon"])}&zoom=18&maptype=satellite"</a>
