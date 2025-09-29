@@ -1,25 +1,25 @@
-import speech_recognition as sr
-import pyttsx3
+# Imports the Google Cloud client library
+from google.cloud import speech
 
 
-recognizer = sr.Recognizer()
 
-audio_file = '/home/dinamitrii/PycharmProjects/labs_here/audio_to_text/data/art_of_war_01-02_sun_tzu_64kb.mp3'
+def run_quickstart() -> speech.RecognizeResponse:
+    # Instantiates a client
+    client = speech.SpeechClient()
 
+    # The name of the audio file to transcribe
+    gcs_uri = "gs://cloud-samples-data/speech/brooklyn_bridge.raw"
 
-# udioSegment.from_mp3(audio_file).export(audio_file, format='mp3')
-# audio = AudioSegment.from_file(audio_file)
+    audio = speech.RecognitionAudio(uri=gcs_uri)
 
-with sr.AudioFile(audio_file) as source:
-    audio_data = recognizer.record(source)
+    config = speech.RecognitionConfig(
+        encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
+        sample_rate_hertz=16000,
+        language_code="en-US",
+    )
 
-try:
-    text = recognizer.recognize_bing(audio_data, language="bg", key="")
-    print(text)
-    print("Extracted Text:", text)
+    # Detects speech in the audio file
+    response = client.recognize(config=config, audio=audio)
 
-except sr.UnknownValueError:
-    print("Google Speech Recognition could not understand audio")
-except sr.RequestError as e:
-    print("API Error:", e)
-
+    for result in response.results:
+        print(f"Transcript: {result.alternatives[0].transcript}")
