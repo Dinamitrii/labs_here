@@ -15,4 +15,4 @@ for _ in range(200):
     draw.polygon(point, color)
 
 img.save("out.jpg")
-img.show()
+

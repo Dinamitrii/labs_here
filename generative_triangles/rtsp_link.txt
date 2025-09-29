@@ -1,3 +1,5 @@
 Maps=AIzaSyAtPCVL8OZUFWQ0czlPkRCI-AdFmSlVY1o
 
+opencage_geocoder=8bb5cbe0b9c04518b6cbd7066ff019d7
+
 f"'<a href="https://www.google.com/maps/embed/v1/view?key={os.getenv("API_KEY")}&center={(address.raw["lat"], address.raw["lon"])}&zoom=18&maptype=satellite"</a>
