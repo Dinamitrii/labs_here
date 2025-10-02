@@ -1,6 +1,4 @@
 import calendar
-from calendar import day_name
-
 from rich.console import Console
 from rich.table import Table
 
