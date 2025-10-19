@@ -1,7 +1,7 @@
 import urllib.request
 
 # URL of the web page to fetch
-url = 'https://www.example.com/'
+url = 'https://127.0.0.1/'
 
 try:
     response = urllib.request.urlopen(url)
