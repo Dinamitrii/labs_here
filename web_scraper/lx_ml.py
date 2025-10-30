@@ -1,7 +1,7 @@
 from lxml import html
 import requests
 
-url = 'https://google.bg/'
+url = 'https://powplanner.com/california/ski-shops/'
 response = requests.get(url)
 tree = html.fromstring(response.content)
 

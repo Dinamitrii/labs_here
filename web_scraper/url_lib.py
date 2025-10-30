@@ -1,8 +1,7 @@
 import urllib.request
 
 # URL of the web page to fetch
-url = 'https://127.0.0.1/'
-
+url = 'https://powplanner.com/california/ski-shops/'
 try:
     response = urllib.request.urlopen(url)
     data = response.read()

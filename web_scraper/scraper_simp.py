@@ -1,8 +1,24 @@
+from pprint import pprint
 import requests
 from bs4 import BeautifulSoup
 
-response = requests.get('https://www.geeksforgeeks.org/python/python-programming-language-tutorial/')
+
+list_a = []
+
+response = requests.get('https://powplanner.com/california/ski-shops')
 
 soup = BeautifulSoup(response.content, 'html.parser')
 
-print(soup.prettify())
+content_div = soup.find('div').get_attribute_list("h2")
+
+print("starting here")
+
+
+pprint(content_div)
+
+print("ends here")
+
+
+
+
+

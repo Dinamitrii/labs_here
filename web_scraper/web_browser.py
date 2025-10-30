@@ -20,7 +20,7 @@ for page in range(1, 3):
     driver = webdriver.Chrome(service=service, options=options)
 
     # Load the URL
-    url = f"https://webscraper.io/test-sites/e-commerce/static/computers/laptops?page=%7Bpage%7D"
+    url = f"https://powplanner.com/california/ski-shops/"
     driver.get(url)
     time.sleep(2)  # Optional wait to ensure page loads
 

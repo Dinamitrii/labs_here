@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Fetch and parse the page
-response = requests.get('https://www.geeksforgeeks.org/python/python-programming-language-tutorial/')
+response = requests.get('https://powplanner.com/california/ski-shops/')
 soup = BeautifulSoup(response.content, 'html.parser')
 
 # Find the main content container
