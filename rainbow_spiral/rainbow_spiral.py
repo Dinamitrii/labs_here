@@ -1,7 +1,9 @@
 import turtle
-import math
 
-t = turtle.Turtle(); t.speed(0)
+
+t = turtle.Turtle()
+t.speed(0)
+turtle.bgcolor("black")
 
 
 colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
@@ -12,4 +14,3 @@ for i in range(360):
     t.right(59)
 
 turtle.done()
-

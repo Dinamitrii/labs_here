@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>🌍 Network Diagnostic Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-sA+e2k0g0rY1b8v2g5m1kQ1m5s6KQv6mYq3e9gIP+3s=" crossorigin=""/>
+</head>
+<body>
+  <h2>🌍 Network Diagnostic Tool</h2>
+
+  <form onsubmit="return false;">
+      <label for="target"></label>
+
+      <input id="target" placeholder="пример: abv.bg или 8.8.8.8">
+
+      <button id="pingBtn" onclick="runCommand('ping')">Ping</button>
+
+      <button id="traceBtn" onclick="runCommand('trace')">Traceroute</button>
+
+      <button id="whoisBtn" onclick="runCommand('whois')">Whois</button>
+
+      <button id="stopBtn" onclick="stopCommand()">Stop</button>
+  </form>
+
+  <div class="planet" id="planet"></div>
+  <pre id="output"></pre>
+
+  <!-- картата -->
+  <div id="map" style="display:none;"></div>
+
+  <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-o9N1j6m3r3y0w8sY2M/FlQm0LkKq3/7h0P6u3vY3jLM=" crossorigin=""></script>
+</body>
+</html>

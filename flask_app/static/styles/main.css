@@ -1,0 +1,108 @@
+body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: monospace;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background: #161b22;
+    color: #e6edf3;
+    width: 320px;
+}
+
+button {
+    padding: 8px 14px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+#pingBtn {
+    background: #238636;
+}
+
+#traceBtn {
+    background: #2563eb;
+}
+
+#whoisBtn {
+    background: #a371f7;
+}
+
+#stopBtn {
+    background: #d73a49;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+pre {
+    background: #0f1720;
+    padding: 15px;
+    border-radius: 8px;
+    width: 82%;
+    margin: 18px auto;
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 120px;
+}
+
+.line-success {
+    color: #4ade80;
+}
+
+.line-fail {
+    color: #f87171;
+}
+
+.line-info {
+    color: #60a5fa;
+}
+
+.line-geo {
+    color: #facc15;
+}
+
+.line-default {
+    color: #e6edf3;
+}
+
+.planet {
+    margin: 8px auto;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle at 30% 30%, #3b82f6, #1e3a8a);
+    border-radius: 50%;
+    box-shadow: 0 0 20px #2563eb;
+    animation: spin 2.5s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* карта стил */
+#map {
+    width: 82%;
+    height: 360px;
+    margin: 12px auto 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
